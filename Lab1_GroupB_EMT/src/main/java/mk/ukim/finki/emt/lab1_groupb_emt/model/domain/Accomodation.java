@@ -7,6 +7,9 @@ import lombok.Setter;
 import mk.ukim.finki.emt.lab1_groupb_emt.model.enums.Category;
 import mk.ukim.finki.emt.lab1_groupb_emt.model.enums.Condition;
 
+import java.util.ArrayList;
+import java.util.List;
+
 //id (Long), createdAt (LocalDateTime), updatedAt (LocalDateTime), name (String), category (enum), host (Host) и numRooms (Integer).
 
 @Entity
@@ -24,6 +27,8 @@ public class Accomodation extends BaseAuditableEntity{
     @JoinColumn(name = "host_id")
     private Host host;
     private Integer numRooms;
+    @OneToMany(mappedBy = "accomodation", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Review> reviews = new ArrayList<>();
 
     public Accomodation() {
     }
@@ -35,6 +40,15 @@ public class Accomodation extends BaseAuditableEntity{
         this.host = host;
         this.numRooms = numRooms;
         this.occupied = occupied;
+    }
+
+
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
     }
 
     public String getName() {

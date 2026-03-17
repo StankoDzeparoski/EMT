@@ -28,6 +28,14 @@ public class AccommodationController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    @PostMapping("/{id}/add-review")
+    public ResponseEntity<Void> addReview(
+            @PathVariable Long id, @RequestParam String comment, @RequestParam Double rating) {
+        accommodationApplicationService
+                .addReview(id, comment, rating);
+        return ResponseEntity.noContent().build();
+    }
+
     @GetMapping
     public ResponseEntity<List<DisplayAccomodationDto>> findAll() {
         return ResponseEntity.ok(accommodationApplicationService.findAll());
@@ -56,5 +64,6 @@ public class AccommodationController {
                 .map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
+
 
 }

@@ -1,7 +1,9 @@
 package mk.ukim.finki.emt.lab1_groupb_emt.service.domain.impl;
 
 import mk.ukim.finki.emt.lab1_groupb_emt.model.domain.Accomodation;
+import mk.ukim.finki.emt.lab1_groupb_emt.model.domain.Review;
 import mk.ukim.finki.emt.lab1_groupb_emt.repository.AccomodationRepository;
+import mk.ukim.finki.emt.lab1_groupb_emt.repository.ReviewRepository;
 import mk.ukim.finki.emt.lab1_groupb_emt.service.domain.AccommodationService;
 import org.springframework.stereotype.Service;
 
@@ -12,9 +14,11 @@ import java.util.Optional;
 public class AccommodationServiceImpl implements AccommodationService {
 
     private final AccomodationRepository accomodationRepository;
+    private final ReviewRepository reviewRepository;
 
-    public AccommodationServiceImpl(AccomodationRepository accomodationRepository) {
+    public AccommodationServiceImpl(AccomodationRepository accomodationRepository, ReviewRepository reviewRepository) {
         this.accomodationRepository = accomodationRepository;
+        this.reviewRepository = reviewRepository;
     }
 
     @Override
@@ -53,5 +57,16 @@ public class AccommodationServiceImpl implements AccommodationService {
         Optional<Accomodation> accommodation = accomodationRepository.findById(id);
         accommodation.ifPresent(accomodationRepository::delete);
         return accommodation;
+    }
+
+    @Override
+    public void addReview(Long accommodationId, String comment, Double rating) {
+        Review review = new Review(comment, rating);
+        review.setAccomodation(accomodationRepository.findById(accommodationId).orElseThrow(() -> new RuntimeException("Accommodation not found")));
+
+        accomodationRepository.findById(accommodationId).ifPresent(accommodation -> {
+            accommodation.getReviews().add(review);
+            accomodationRepository.save(accommodation);
+        });
     }
 }

@@ -3,6 +3,7 @@ package mk.ukim.finki.emt.lab1_groupb_emt.model.dto;
 import jakarta.validation.constraints.NotBlank;
 import mk.ukim.finki.emt.lab1_groupb_emt.model.domain.Accomodation;
 import mk.ukim.finki.emt.lab1_groupb_emt.model.domain.Host;
+import mk.ukim.finki.emt.lab1_groupb_emt.model.domain.Review;
 import mk.ukim.finki.emt.lab1_groupb_emt.model.enums.Category;
 import mk.ukim.finki.emt.lab1_groupb_emt.model.enums.Condition;
 
@@ -16,7 +17,10 @@ public record DisplayAccomodationDto (
     Condition condition,
     Host host,
     Integer numRooms,
-    Boolean occupied
+    Boolean occupied,
+        Double averageRating,
+        List<DisplayReviewDto> reviews
+
 ) {
     public static DisplayAccomodationDto from(Accomodation accomodation) {
         return new DisplayAccomodationDto(
@@ -26,7 +30,9 @@ public record DisplayAccomodationDto (
                 accomodation.getCondition(),
                 accomodation.getHost(),
                 accomodation.getNumRooms(),
-                accomodation.getOccupied()
+                accomodation.getOccupied(),
+                accomodation.getReviews().stream().mapToDouble(Review::getRating).average().orElse(0.0),
+                accomodation.getReviews().stream().map(DisplayReviewDto::from).toList()
         );
     }
 

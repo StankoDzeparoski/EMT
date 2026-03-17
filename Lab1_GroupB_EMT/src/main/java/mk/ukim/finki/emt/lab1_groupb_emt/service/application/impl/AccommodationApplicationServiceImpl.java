@@ -58,4 +58,9 @@ public class AccommodationApplicationServiceImpl implements AccommodationApplica
                 .deleteById(id)
                 .map(DisplayAccomodationDto::from);
     }
+
+    @Override
+    public void addReview(Long accommodationId, String comment, Double rating) {
+        accommodationService.addReview(accommodationId, comment, rating);
+    }
 }
