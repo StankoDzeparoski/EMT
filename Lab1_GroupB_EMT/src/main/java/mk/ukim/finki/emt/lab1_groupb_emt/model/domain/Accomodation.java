@@ -16,6 +16,24 @@ import java.util.List;
 @Getter
 @Setter
 @Table(name = "accommodations")
+@NamedEntityGraphs({
+    @NamedEntityGraph(
+        name = "Accommodation.withHostAndCountry",
+        attributeNodes = {
+            @NamedAttributeNode(value = "host", subgraph = "host-country")
+        },
+        subgraphs = {
+            @NamedSubgraph(
+                name = "host-country",
+                attributeNodes = @NamedAttributeNode("country")
+            )
+        }
+    ),
+    @NamedEntityGraph(
+        name = "Accommodation.withHost",
+        attributeNodes = @NamedAttributeNode("host")
+    )
+})
 public class Accomodation extends BaseAuditableEntity{
     private String name;
     @Enumerated(EnumType.STRING)
@@ -41,7 +59,6 @@ public class Accomodation extends BaseAuditableEntity{
         this.numRooms = numRooms;
         this.occupied = occupied;
     }
-
 
     public List<Review> getReviews() {
         return reviews;
