@@ -5,6 +5,7 @@ import type {
   LoginUserRequestDto,
   LoginUserResponseDto
 } from './types/User.ts';
+import type { AuthLogDto } from './types/AuthLog.ts';
 
 const userApi = {
   /**
@@ -37,6 +38,14 @@ const userApi = {
    */
   login: async (loginDto: LoginUserRequestDto) => {
     return await axiosInstance.post<LoginUserResponseDto>('/user/login', loginDto);
+  },
+
+  /**
+   * Get all authentication logs (Admin only)
+   * GET /api/user/auth-logs
+   */
+  getAuthLogs: async () => {
+    return await axiosInstance.get<AuthLogDto[]>('/user/auth-logs');
   }
 };
 

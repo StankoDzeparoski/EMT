@@ -8,6 +8,7 @@ import HostsPage from './ui/pages/HostsPage';
 import HostDetailPage from './ui/pages/HostDetailPage';
 import CountriesPage from './ui/pages/CountriesPage';
 import CountryDetailPage from './ui/pages/CountryDetailPage';
+import LogsPage from './ui/pages/LogsPage';
 import RegisterPage from './ui/pages/RegisterPage';
 import LoginPage from './ui/pages/LoginPage';
 
@@ -39,6 +40,7 @@ function App() {
             <Route path="/hosts/:id" element={<HostDetailPage />} />
             <Route path="/countries" element={<CountriesPage />} />
             <Route path="/countries/:id" element={<CountryDetailPage />} />
+            <Route path="/logs" element={<LogsPage />} />
           </Route>
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<LoginPage />} />

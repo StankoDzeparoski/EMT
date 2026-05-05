@@ -21,6 +21,9 @@ const Header = () => {
           <Button color="inherit" component={RouterLink} to="/countries">
             Countries
           </Button>
+          <Button color="inherit" component={RouterLink} to="/logs">
+            Logs
+          </Button>
           <Box sx={{ display: 'flex', gap: 1, marginLeft: 2, borderLeft: '1px solid rgba(255,255,255,0.3)', paddingLeft: 2 }}>
             <Button color="inherit" component={RouterLink} to="/login" variant="outlined">
               Login

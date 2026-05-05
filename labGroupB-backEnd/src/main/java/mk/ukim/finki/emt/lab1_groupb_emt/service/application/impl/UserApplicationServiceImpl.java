@@ -1,0 +1,53 @@
+package mk.ukim.finki.emt.lab1_groupb_emt.service.application.impl;
+
+import mk.ukim.finki.emt.lab1_groupb_emt.helpers.JwtHelper;
+import mk.ukim.finki.emt.lab1_groupb_emt.model.domain.User;
+import mk.ukim.finki.emt.lab1_groupb_emt.model.dto.Auth.LoginUserRequestDto;
+import mk.ukim.finki.emt.lab1_groupb_emt.model.dto.Auth.LoginUserResponseDto;
+import mk.ukim.finki.emt.lab1_groupb_emt.model.dto.Auth.RegisterUserRequestDto;
+import mk.ukim.finki.emt.lab1_groupb_emt.model.dto.Auth.RegisterUserResponseDto;
+import mk.ukim.finki.emt.lab1_groupb_emt.service.application.UserApplicationService;
+import mk.ukim.finki.emt.lab1_groupb_emt.service.domain.AuthLogService;
+import mk.ukim.finki.emt.lab1_groupb_emt.service.domain.UserService;
+import org.springframework.stereotype.Service;
+
+import java.util.Optional;
+
+@Service
+public class UserApplicationServiceImpl implements UserApplicationService {
+    private final UserService userService;
+    private final JwtHelper jwtHelper;
+    private final AuthLogService authLogService;
+
+    public UserApplicationServiceImpl(UserService userService, JwtHelper jwtHelper, AuthLogService authLogService) {
+        this.userService = userService;
+        this.jwtHelper = jwtHelper;
+        this.authLogService = authLogService;
+    }
+
+    @Override
+    public Optional<RegisterUserResponseDto> register(RegisterUserRequestDto registerUserRequestDto) {
+        User user = userService.register(registerUserRequestDto.toUser());
+        RegisterUserResponseDto displayUserDto = RegisterUserResponseDto.from(user);
+        return Optional.of(displayUserDto);
+    }
+
+    @Override
+    public Optional<LoginUserResponseDto> login(LoginUserRequestDto loginUserRequestDto) {
+        User user = userService.login(loginUserRequestDto.username(), loginUserRequestDto.password());
+
+        String token = jwtHelper.generateToken(user);
+
+        authLogService.saveLog(user.getUsername(), token);
+
+        return Optional.of(new LoginUserResponseDto(token));
+    }
+
+    @Override
+    public Optional<RegisterUserResponseDto> findByUsername(String username) {
+        return userService
+            .findByUsername(username)
+            .map(RegisterUserResponseDto::from);
+    }
+}
+
