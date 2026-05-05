@@ -2,8 +2,8 @@ package mk.ukim.finki.emt.lab1_groupb_emt.repository;
 
 import mk.ukim.finki.emt.lab1_groupb_emt.model.domain.Accomodation;
 import mk.ukim.finki.emt.lab1_groupb_emt.model.enums.Category;
-import mk.ukim.finki.emt.lab1_groupb_emt.model.projection.AccommodationExtendedProjection;
-import mk.ukim.finki.emt.lab1_groupb_emt.model.projection.AccommodationProjection;
+import mk.ukim.finki.emt.lab1_groupb_emt.model.projection.Accommodation.AccommodationExtendedProjection;
+import mk.ukim.finki.emt.lab1_groupb_emt.model.projection.Accommodation.AccommodationProjection;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.EntityGraph;

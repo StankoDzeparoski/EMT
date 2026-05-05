@@ -1,4 +1,4 @@
-package mk.ukim.finki.emt.lab1_groupb_emt.model.dto;
+package mk.ukim.finki.emt.lab1_groupb_emt.model.dto.Accomodation;
 
 import jakarta.validation.constraints.NotBlank;
 import mk.ukim.finki.emt.lab1_groupb_emt.model.domain.Accomodation;
@@ -12,12 +12,12 @@ import java.util.List;
 public record DisplayAccomodationDto (
         Long id,
         @NotBlank
-    String name,
-    Category category,
-    Condition condition,
-    Host host,
-    Integer numRooms,
-    Boolean occupied,
+        String name,
+        Category category,
+        Condition condition,
+        Host host,
+        Integer numRooms,
+        Boolean occupied,
         Double averageRating,
         List<DisplayReviewDto> reviews
 

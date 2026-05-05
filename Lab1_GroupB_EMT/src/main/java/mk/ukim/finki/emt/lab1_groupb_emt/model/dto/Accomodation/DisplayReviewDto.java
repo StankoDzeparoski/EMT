@@ -1,6 +1,5 @@
-package mk.ukim.finki.emt.lab1_groupb_emt.model.dto;
+package mk.ukim.finki.emt.lab1_groupb_emt.model.dto.Accomodation;
 
-import mk.ukim.finki.emt.lab1_groupb_emt.model.domain.Accomodation;
 import mk.ukim.finki.emt.lab1_groupb_emt.model.domain.Review;
 
 import java.util.List;

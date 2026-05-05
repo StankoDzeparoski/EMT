@@ -1,7 +1,7 @@
 package mk.ukim.finki.emt.lab1_groupb_emt.repository;
 
 import mk.ukim.finki.emt.lab1_groupb_emt.model.domain.AccommodationDetailsView;
-import mk.ukim.finki.emt.lab1_groupb_emt.model.projection.AccommodationDetailsViewProjection;
+import mk.ukim.finki.emt.lab1_groupb_emt.model.projection.Accommodation.AccommodationDetailsViewProjection;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

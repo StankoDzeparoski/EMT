@@ -1,6 +1,6 @@
 package mk.ukim.finki.emt.lab1_groupb_emt.service.application.impl;
 
-import mk.ukim.finki.emt.lab1_groupb_emt.model.projection.AccommodationStatisticsByCategoryProjection;
+import mk.ukim.finki.emt.lab1_groupb_emt.model.projection.Accommodation.AccommodationStatisticsByCategoryProjection;
 import mk.ukim.finki.emt.lab1_groupb_emt.repository.AccommodationStatisticsByCategoryRepository;
 import mk.ukim.finki.emt.lab1_groupb_emt.service.application.AccommodationStatisticsByCategoryService;
 import mk.ukim.finki.emt.lab1_groupb_emt.web.dto.AccommodationStatisticsByCategoryDto;

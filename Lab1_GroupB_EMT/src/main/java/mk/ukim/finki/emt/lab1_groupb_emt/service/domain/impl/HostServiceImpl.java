@@ -1,8 +1,13 @@
 package mk.ukim.finki.emt.lab1_groupb_emt.service.domain.impl;
 
+import mk.ukim.finki.emt.lab1_groupb_emt.model.domain.Accomodation;
 import mk.ukim.finki.emt.lab1_groupb_emt.model.domain.Host;
 import mk.ukim.finki.emt.lab1_groupb_emt.repository.HostRepository;
 import mk.ukim.finki.emt.lab1_groupb_emt.service.domain.HostService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -49,6 +54,13 @@ public class HostServiceImpl implements HostService
         host.ifPresent(hostRepository::delete);
         return host;
     }
+
+    @Override
+    public Page<Host> findAll(int page, int size, String sortBy) {
+        Pageable pageable = PageRequest.of(page, size, Sort.by(sortBy));
+        return hostRepository.findAll(pageable);
+    }
+
 }
 
 

@@ -1,4 +1,4 @@
-package mk.ukim.finki.emt.lab1_groupb_emt.model.projection;
+package mk.ukim.finki.emt.lab1_groupb_emt.model.projection.Accommodation;
 
 import java.math.BigDecimal;
 

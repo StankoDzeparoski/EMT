@@ -1,9 +1,7 @@
 package mk.ukim.finki.emt.lab1_groupb_emt.service.domain;
 
 
-import mk.ukim.finki.emt.lab1_groupb_emt.model.projection.AccommodationDetailsViewProjection;
-import org.springframework.data.domain.Page;
-import mk.ukim.finki.emt.lab1_groupb_emt.model.projection.AccommodationDetailsViewProjection;
+import mk.ukim.finki.emt.lab1_groupb_emt.model.projection.Accommodation.AccommodationDetailsViewProjection;
 import org.springframework.data.domain.Page;
 
 /**

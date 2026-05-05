@@ -1,7 +1,7 @@
 package mk.ukim.finki.emt.lab1_groupb_emt.repository;
 
 import mk.ukim.finki.emt.lab1_groupb_emt.model.domain.AccommodationStatisticsByCategory;
-import mk.ukim.finki.emt.lab1_groupb_emt.model.projection.AccommodationStatisticsByCategoryProjection;
+import mk.ukim.finki.emt.lab1_groupb_emt.model.projection.Accommodation.AccommodationStatisticsByCategoryProjection;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

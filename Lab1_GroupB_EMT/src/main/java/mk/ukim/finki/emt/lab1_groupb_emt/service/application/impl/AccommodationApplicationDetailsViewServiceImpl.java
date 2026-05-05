@@ -1,9 +1,8 @@
 package mk.ukim.finki.emt.lab1_groupb_emt.service.application.impl;
 
-import mk.ukim.finki.emt.lab1_groupb_emt.model.projection.AccommodationDetailsViewProjection;
+import mk.ukim.finki.emt.lab1_groupb_emt.model.projection.Accommodation.AccommodationDetailsViewProjection;
 import mk.ukim.finki.emt.lab1_groupb_emt.service.application.AccommodationApplicationDetailsViewService;
 import mk.ukim.finki.emt.lab1_groupb_emt.service.domain.AccommodationDetailsViewService;
-import mk.ukim.finki.emt.lab1_groupb_emt.service.domain.AccommodationService;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 

@@ -1,13 +1,13 @@
 package mk.ukim.finki.emt.lab1_groupb_emt.service.application.impl;
 
 import mk.ukim.finki.emt.lab1_groupb_emt.model.domain.Host;
-import mk.ukim.finki.emt.lab1_groupb_emt.model.dto.CreateAccomodationDto;
-import mk.ukim.finki.emt.lab1_groupb_emt.model.dto.DisplayAccomodationDto;
-import mk.ukim.finki.emt.lab1_groupb_emt.model.dto.OptimizedAccommodationDto;
+import mk.ukim.finki.emt.lab1_groupb_emt.model.dto.Accomodation.CreateAccomodationDto;
+import mk.ukim.finki.emt.lab1_groupb_emt.model.dto.Accomodation.DisplayAccomodationDto;
+import mk.ukim.finki.emt.lab1_groupb_emt.model.dto.Accomodation.OptimizedAccommodationDto;
 import mk.ukim.finki.emt.lab1_groupb_emt.model.enums.Category;
 import mk.ukim.finki.emt.lab1_groupb_emt.model.exception.HostNotFoundException;
-import mk.ukim.finki.emt.lab1_groupb_emt.model.projection.AccommodationExtendedProjection;
-import mk.ukim.finki.emt.lab1_groupb_emt.model.projection.AccommodationProjection;
+import mk.ukim.finki.emt.lab1_groupb_emt.model.projection.Accommodation.AccommodationExtendedProjection;
+import mk.ukim.finki.emt.lab1_groupb_emt.model.projection.Accommodation.AccommodationProjection;
 import mk.ukim.finki.emt.lab1_groupb_emt.service.application.AccommodationApplicationService;
 import mk.ukim.finki.emt.lab1_groupb_emt.service.domain.AccommodationService;
 import mk.ukim.finki.emt.lab1_groupb_emt.service.domain.HostService;

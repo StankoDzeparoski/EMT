@@ -1,4 +1,4 @@
-package mk.ukim.finki.emt.lab1_groupb_emt.model.dto;
+package mk.ukim.finki.emt.lab1_groupb_emt.model.dto.Accomodation;
 
 
 import jakarta.validation.constraints.NotBlank;

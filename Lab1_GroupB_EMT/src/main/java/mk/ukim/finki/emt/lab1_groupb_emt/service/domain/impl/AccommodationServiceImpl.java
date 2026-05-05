@@ -4,8 +4,8 @@ import mk.ukim.finki.emt.lab1_groupb_emt.event.publisher.AccommodationEventPubli
 import mk.ukim.finki.emt.lab1_groupb_emt.model.domain.Accomodation;
 import mk.ukim.finki.emt.lab1_groupb_emt.model.domain.Review;
 import mk.ukim.finki.emt.lab1_groupb_emt.model.enums.Category;
-import mk.ukim.finki.emt.lab1_groupb_emt.model.projection.AccommodationExtendedProjection;
-import mk.ukim.finki.emt.lab1_groupb_emt.model.projection.AccommodationProjection;
+import mk.ukim.finki.emt.lab1_groupb_emt.model.projection.Accommodation.AccommodationExtendedProjection;
+import mk.ukim.finki.emt.lab1_groupb_emt.model.projection.Accommodation.AccommodationProjection;
 import mk.ukim.finki.emt.lab1_groupb_emt.repository.AccomodationRepository;
 import mk.ukim.finki.emt.lab1_groupb_emt.repository.ReviewRepository;
 import mk.ukim.finki.emt.lab1_groupb_emt.service.domain.AccommodationService;
